@@ -21,14 +21,14 @@ iframe {
 }
 
 body {
-  font-family: Inter;
+  font-family: Inter, sans-serif;
 
   max-width: var(--max-width);
   margin: auto;
-  --h-padding: 1rem;
+  --h-padding: 1.5rem;
 
   @media (width > 600px) {
-    --h-padding: 10rem;
+    --h-padding: min(10vw, 10rem);
   }
 }
 
@@ -56,6 +56,16 @@ body {
 }
 
 .main {
+  section h2 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin: 0 auto 2.5rem;
+
+    @media (width > 600px) {
+      margin: 2rem auto;
+    }
+  }
 }
 
 .hero {
@@ -74,7 +84,6 @@ body {
     background-position: top;
     background-size: cover;
     aspect-ratio: 1512 / 772;
-    padding: 10% var(--h-padding);
     align-items: flex-start;
   }
 
@@ -92,15 +101,52 @@ body {
 }
 
 .music {
+  background-color: #f5ede3;
+  padding: 2.5rem var(--h-padding);
+
+  @media (width > 600px) {
+  }
 }
 
 .album {
+  margin-bottom: 3rem;
+
+  @media (width > 1000px) {
+    display: flex;
+    align-items: center;
+    gap: var(--h-padding);
+  }
+
+  h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+    vertical-align: middle;
+
+    @media (width < 1000px) {
+      margin-top: 1rem;
+    }
+  }
 }
 
-.blurb {
+.album-text-container {
+}
+
+.album-cover {
+  max-width: 100%;
+  width: 464px;
+}
+
+.album-blurb {
+  margin-top: 0.2rem;
+  line-height: 1;
 }
 
 .album-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .video {
