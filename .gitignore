@@ -31,4 +31,9 @@ node_modules
 
 # build directory
 dist
+
+# mac folder stuff
 .DS_Store
+
+# temp folder
+temp
