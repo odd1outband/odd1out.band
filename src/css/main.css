@@ -1,7 +1,8 @@
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 16px;
+  padding: 0;
 }
 *,
 *:before,
@@ -9,143 +10,143 @@ html {
   box-sizing: inherit;
 }
 
-@font-face {
-  font-family: 'FishAndChips';
-  src: url('../fonts/FishAndChips-Regular.otf'),
-    url('../fonts/fishandchips-regular-webfont.ttf');
+:root {
+  --max-width: 1600px;
+}
+
+iframe {
+  aspect-ratio: 16 / 9;
+  height: 100%;
+  width: 100%;
 }
 
 body {
-  font-family: FishAndChips, sans-serif;
-  display: flex;
-  flex-direction: column;
-  font-size: 4rem;
-  padding: 0 5%;
-}
+  font-family: Inter;
 
-.video {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
+  max-width: var(--max-width);
+  margin: auto;
+  --h-padding: 1rem;
 
-.video iframe,
-.video object,
-.video embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.logo {
-  max-width: 40rem;
-  display: none;
-}
-
-h1 {
-  max-width: 40rem;
-  margin: 0 auto;
+  @media (width > 600px) {
+    --h-padding: 10rem;
+  }
 }
 
 .header {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 1rem 0 3rem;
-  text-align: center;
+  position: absolute;
+  padding: 1.5rem var(--h-padding);
+
+  color: #fff;
+  display: flex;
+  align-items: center;
 }
 
-.odd1out,
-.is {
-  display: none;
+.title {
+  margin: 0;
 }
 
-.members {
-  text-align: center;
-  clear: both;
-  list-style: none;
-  margin: 1rem 0 5rem;
-  padding: 0;
-  font-size: 3rem;
-}
-
-.divider {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.spotify-wrapper {
-  text-align: center;
-  margin: 4rem 0;
-}
-
-@media (min-width: 800px) {
-  .row {
+.main-menu {
+  ul {
+    margin: 0;
     display: flex;
+    gap: 69px;
+    list-style: none;
+    text-transform: uppercase;
   }
+}
 
-  .logo {
-    display: block;
-    max-width: 22rem;
+.main {
+}
+
+.hero {
+  background-image:
+    linear-gradient(#6b1b1b 5%, #ffffff00), url(../img/hero_2048_l.jpg);
+  background-position: center;
+  background-size: auto 488px;
+  background-blend-mode: multiply;
+  min-height: 488px;
+  container-type: inline-size;
+  padding: 10% var(--h-padding);
+  display: flex;
+  align-items: flex-end;
+
+  @media (width > 600px) {
+    background-position: top;
+    background-size: cover;
+    aspect-ratio: 1512 / 772;
+    padding: 10% var(--h-padding);
+    align-items: flex-start;
   }
 
   h1 {
-    display: inline-block;
-    margin: 0 1rem 0 0;
-    width: 22rem;
-  }
+    font-size: 15cqw;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0;
 
-  .header {
-    padding-left: 10%;
-    margin-top: 4rem;
-    text-align: left;
+    @media (width > 600px) {
+      font-size: 10.6cqw;
+    }
   }
+}
 
-  .video-wrapper {
-    margin-right: 7.5%;
-    flex-basis: 60%;
-    text-align: left;
-  }
+.music {
+}
 
-  .odd-wrapper {
-    text-align: right;
-    padding-right: 2vw;
-    flex-basis: 40%;
-    align-self: flex-end;
-  }
+.album {
+}
 
-  .odd1out {
-    display: inline-block;
-    width: 22rem;
-    opacity: 0.1;
-    transform: translateY(6rem) rotate(90deg);
-    margin-right: 1rem;
-    transform-origin: top right;
-  }
+.blurb {
+}
 
-  .is {
-    display: block;
-    flex-basis: 40%;
-    text-align: right;
-    margin: 1rem 0rem;
-    padding-right: 4vw;
-  }
+.album-links {
+}
 
-  .members,
-  .spotify-wrapper {
-    flex-basis: 60%;
-    margin-left: -2vw;
-    text-align: left;
-    margin-right: 7.5%;
-    font-size: inherit;
-  }
+.video {
+}
 
-  .footer {
-    text-align: center;
-  }
+.members {
+}
+
+.member {
+}
+
+.anders {
+}
+
+.caption {
+}
+
+.name {
+}
+
+.role {
+}
+
+.patrik {
+}
+
+.ric {
+}
+
+.david {
+}
+
+.martin {
+}
+
+.outro {
+}
+
+.outro-title {
+}
+
+.outro-blurb {
+}
+
+.footer {
+}
+
+.contact {
 }

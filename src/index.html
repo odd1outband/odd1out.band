@@ -1,65 +1,135 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="fonts/inter.css" />
+    <title>Odd1Out - The band that stands out.</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel='icon' type='image/png' href='img/favicon.png' />
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <title>Odd1Out</title>
-</head>
+    <!--
+Source - https://stackoverflow.com/a/6385846
+Posted by Charles Roper, modified by community. See post 'Timeline' for change history
+Retrieved 2026-03-29, License - CC BY-SA 3.0
+-->
 
-<body>
+    <script type="text/javascript" src="http://livejs.com/live.js"></script>
+  </head>
+
+  <body>
     <header class="header">
-        <div class="logo">
-            <img src="img/1.svg" alt="logo">
-        </div>
-        <h1>
-            <img src="img/odd1out.svg" alt="Odd1Out" />
-        </h1>
-        The unknown conspiracy, or just a band
+      <h2 class="title">Odd1Out</h2>
+      <nav class="main-menu">
+        <ul>
+          <li>Music</li>
+          <li>Live</li>
+          <li>Videos</li>
+          <li>Merch</li>
+        </ul>
+      </nav>
     </header>
     <main class="main">
-        <div class="row">
-            <div class="odd-wrapper">
-                <div class="odd1out">
-                    <img src="img/odd1out.svg" alt="Odd1Out" />
-                </div>
-            </div>
-            <div class="video-wrapper">
-                <div class="video">
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/JlvMF_5mmKE?rel=0" frameborder="0" allow="autoplay; encrypted-media"
-                        allowfullscreen></iframe>
-                </div>
+      <section class="hero">
+        <h1>The band that stands out.</h1>
+      </section>
+      <section class="music">
+        <h2>Music</h2>
+        <div class="album">
+          <img src="img/album-time-to-get-mad_1024_l.jpg" />
+          <h3>Time To Get Mad EP</h3>
+          <p class="blurb">Available now on all platforms</p>
+          <nav class="album-links">
+            <a href="https://open.spotify.com/album/1I6cCtMookz8PHjc2wgnEp"
+              ><img src="img/icon-spotify.svg"
+            /></a>
+            <a
+              href="https://music.youtube.com/playlist?list=OLAK5uy_mPekn9GQIQamhmARhTewB2txragYK53jA"
+              ><img src="img/icon-google.svg"
+            /></a>
+            <a
+              href="https://www.youtube.com/playlist?list=OLAK5uy_klcme_-2gX9DuTCqkxu90oY2fytubqnYI"
+              ><img src="img/icon-youtube.svg"
+            /></a>
+          </nav>
+        </div>
+        <div class="album">
+          <img src="img/album-new-reason_1024_l.jpg" />
+          <h3>New Reason (Demo)</h3>
+          <p class="blurb">Available now on all platforms</p>
+          <nav class="album-links">
+            <a href="https://open.spotify.com/album/0ZyhtpvveCIZRmJrEhn7wg"
+              ><img src="img/icon-spotify.svg"
+            /></a>
+            <a
+              href="https://music.youtube.com/playlist?list=OLAK5uy_nzDHjldr2mJ3dBIU97nXZWquWo48iCyqg"
+              ><img src="img/icon-google.svg"
+            /></a>
+            <a
+              href="https://www.youtube.com/playlist?list=OLAK5uy_kwYDlf5GWP1I6xAtx39ZOj-3eWbWYRDdA"
+              ><img src="img/icon-youtube.svg"
+            /></a>
+          </nav>
+        </div>
+      </section>
 
-            </div>
+      <section class="video">
+        <iframe
+          width="1600"
+          height="900"
+          src="https://www.youtube-nocookie.com/embed/JlvMF_5mmKE?rel=0"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </section>
+
+      <section class="members">
+        <div class="member anders">
+          <div class="caption">
+            <div class="name">Anders</div>
+            <div class="role">Baritone Saxophone</div>
+          </div>
         </div>
-        <div class="row">
-            <div class="is">is</div>
-            <ul class="members">
-                <li>Rickard Linder / on vocals, guitar</li>
-                <li>Martin Flodin / on guitar</li>
-                <li>Patrik Nilsson / on bass</li>
-                <li>David Brannemark / on drums</li>
-                <li>Roy Arvenas / on trumpet</li>
-                <li>Anders Bengtsson / on sax</li>
-            </ul>
+        <div class="member patrik">
+          <div class="caption">
+            <div class="name">Patrik</div>
+            <div class="role">Bass, Backing Vocals</div>
+          </div>
         </div>
-        <div class="divider"></div>
-        <div class="row">
-            <div class="odd-wrapper"></div>
-            <div class="spotify-wrapper">
-                <iframe src="https://open.spotify.com/embed/album/1I6cCtMookz8PHjc2wgnEp?theme=white" width="300" height="380" frameborder="0"
-                    allowtransparency="true" allow="encrypted-media">
-                </iframe>
-            </div>
+        <div class="member ric">
+          <div class="caption">
+            <div class="name">Ric</div>
+            <div class="role">Lead Vocals, Guitar</div>
+          </div>
         </div>
-        <div class="divider"></div>
-        <footer class="footer">
-            <img class="footer-image" src="img/footer.png">
-        </footer>
+        <div class="member david">
+          <div class="caption">
+            <div class="name">David</div>
+            <div class="role">Drums</div>
+          </div>
+        </div>
+        <div class="member martin">
+          <div class="caption">
+            <div class="name">Martin</div>
+            <div class="role">Lead Guitar</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="outro">
+        <p class="outro-title">Odd1Out</p>
+        <p class="outro-blurb">The band that stands out.</p>
+      </section>
+      <footer class="footer">
+        <nav class="contact">
+          <ul>
+            <li>Contact</li>
+            <li>Instagram</li>
+          </ul>
+        </nav>
+      </footer>
     </main>
-</body>
-
+  </body>
 </html>
