@@ -161,38 +161,84 @@ body {
   padding: 2.5rem var(--h-padding);
 }
 
+.member-grid {
+  display: grid;
+  gap: 1rem;
+
+  @media (width > 600px) {
+    aspect-ratio: 5/8;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(8, auto);
+    padding-bottom: 7.5rem;
+  }
+}
+
 .member {
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+
+  @media (width > 600px) {
+    grid-column-end: span 3;
+    grid-row-end: span 3;
+  }
+
+  @media (width < 600px) {
+    aspect-ratio: 2/3;
+  }
 }
 
-.anders {
-}
-
-.caption {
-}
-
-.name {
+.name,
+.role {
+  background-color: #000;
+  padding: 0.625rem;
+  font-size: 2rem;
+  width: fit-content;
 }
 
 .role {
+  font-size: 1.5rem;
+}
+
+.anders {
+  background-image: url(../img/anders_1024_p.jpg);
+  @media (width > 600px) {
+    grid-column-end: span 2;
+  }
 }
 
 .patrik {
+  background-image: url(../img/patrik_1024_p.jpg);
 }
 
 .ric {
+  background-image: url(../img/ric_1024_l.jpg);
+  @media (width > 600px) {
+    grid-row-end: span 2;
+  }
 }
 
 .david {
+  background-image: url(../img/david_1024_p.jpg);
+  @media (width > 600px) {
+    grid-column-end: span 2;
+  }
 }
 
 .martin {
+  background-image: url(../img/martin_1024_p.jpg);
 }
 
 #outro {
   padding: 2.5rem var(--h-padding);
   border: 1px #fff;
   border-style: solid none;
-  container-type: inline-size;
+  @media (width > 600px) {
+    padding: 5rem var(--h-padding);
+  }
 }
 
 .outro-logo {
@@ -229,10 +275,16 @@ body {
     margin: 0;
   }
 
-  li {
+  li,
+  a {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     font-size: 1.5rem;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
   }
 }
