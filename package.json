@@ -1,25 +1,18 @@
 {
   "name": "odd1out-site",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "The home of Odd1Out on the web",
   "main": "index.html",
-  "dependencies": {
-    "imagemin-cli": "^3.0.0",
-    "serve": "^6.5.3",
-    "surge": "^0.20.1"
-  },
-  "devDependencies": {},
   "scripts": {
     "dev": "serve src",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "serve dist",
     "clean": "rm -rf dist",
     "build:html": "cp src/index.html dist",
-    "build:css": "cp -r src/css/ dist/",
-    "build:fonts": "cp -r src/fonts/ dist/",
-    "build:img": "imagemin src/img/* --out-dir=dist/img",
+    "build:css": "cp -r src/css/ dist/css",
+    "build:fonts": "cp -r src/fonts/ dist/fonts",
+    "build:img": "cp -r src/img/ dist/img",
     "build": "npm run clean && mkdir dist && npm run build:html && npm run build:css && npm run build:img && npm run build:fonts",
-    "deploy": "surge dist odd1out.band",
-    "yolo": "npm run build && npm run deploy"
+    "docker": "docker compose up -d --build"
   },
   "repository": {
     "type": "git",
@@ -35,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/odd1outband/website/issues"
   },
-  "homepage": "http://odd1out.band"
+  "homepage": "https://odd1out.band",
+  "devDependencies": {
+    "serve": "^14.2.6"
+  }
 }
