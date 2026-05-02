@@ -1,12 +1,8 @@
 {
   "name": "odd1out-site",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "The home of Odd1Out on the web",
   "main": "index.html",
-  "dependencies": {
-    "serve": "14.2.6",
-    "surge": "0.27.0"
-  },
   "scripts": {
     "dev": "serve src",
     "test": "serve dist",
@@ -16,8 +12,7 @@
     "build:fonts": "cp -r src/fonts/ dist/fonts",
     "build:img": "cp -r src/img/ dist/img",
     "build": "npm run clean && mkdir dist && npm run build:html && npm run build:css && npm run build:img && npm run build:fonts",
-    "deploy": "surge dist odd1out.band",
-    "yolo": "npm run build && npm run deploy"
+    "docker": "docker compose up -d --build"
   },
   "repository": {
     "type": "git",
@@ -33,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/odd1outband/website/issues"
   },
-  "homepage": "https://odd1out.band"
+  "homepage": "https://odd1out.band",
+  "devDependencies": {
+    "serve": "^14.2.6"
+  }
 }

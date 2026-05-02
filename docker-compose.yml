@@ -1,0 +1,20 @@
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.odd1out.rule=Host(`odd1out.band`) || Host(`www.odd1out.band`)"
+      - "traefik.http.routers.odd1out.entrypoints=websecure"
+      - "traefik.http.routers.odd1out.tls.certresolver=letsencrypt"
+      - "traefik.http.services.odd1out.loadbalancer.server.port=80"
+      - "traefik.http.middlewares.odd1out-www.redirectregex.regex=^https://www\\.odd1out\\.band/(.*)"
+      - "traefik.http.middlewares.odd1out-www.redirectregex.replacement=https://odd1out.band/$${1}"
+      - "traefik.http.middlewares.odd1out-www.redirectregex.permanent=true"
+      - "traefik.http.routers.odd1out.middlewares=odd1out-www"
+
+networks:
+  traefik:
+    external: true
