@@ -4,10 +4,149 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="img/favicon.png" />
+    <style>
+      /* apply a natural box layout model to all elements, but allowing components to change */
+      html {
+        box-sizing: border-box;
+        font-size: 16px;
+        padding: 0;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("fonts/Inter-Regular.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url("fonts/Inter-Medium.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url("fonts/Inter-Bold.woff2") format("woff2");
+      }
+
+      :root {
+        /* --max-width: 1512px; */
+        --h-padding: 1.5rem;
+        @media (width > 600px) {
+          /* --h-padding: min(10vw, 10rem); */
+          --h-padding: max(2rem, calc((100vw - 1000px) / 2));
+        }
+      }
+
+      iframe {
+        aspect-ratio: 16 / 9;
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        font-family: Inter, sans-serif;
+        background-color: #000;
+        color: #fff;
+
+        max-width: var(--max-width);
+        margin: auto;
+      }
+
+      .header {
+        position: absolute;
+        padding: 1.5rem var(--h-padding);
+
+        color: #fff;
+        display: flex;
+        align-items: center;
+      }
+
+      .title {
+        margin: 0;
+      }
+
+      .main-menu {
+        ul {
+          margin: 0;
+          display: flex;
+          gap: 69px;
+          list-style: none;
+          text-transform: uppercase;
+        }
+      }
+
+      .section-title {
+        font-weight: 500;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        margin: 0 auto 2.5rem;
+
+        @media (width > 600px) {
+          margin: 2rem auto;
+        }
+      }
+
+      #hero {
+        background-image:
+          linear-gradient(#6b1b1b 5%, #ffffff00), url(../img/hero_2048_l.jpg);
+        background-position: center;
+        background-size: auto 488px;
+        background-blend-mode: multiply;
+        min-height: 488px;
+        container-type: inline-size;
+        padding: 10% var(--h-padding);
+        display: flex;
+        align-items: flex-end;
+
+        @media (width > 600px) {
+          background-position: top;
+          background-size: cover;
+          aspect-ratio: 1512 / 772;
+          align-items: flex-start;
+        }
+
+        h1 {
+          font-size: 15cqw;
+          line-height: 1;
+          text-transform: uppercase;
+          margin: 0;
+
+          @media (width > 600px) {
+            font-size: 10.6cqw;
+            max-width: calc(100vw - 2 * var(--h-padding));
+          }
+        }
+      }
+    </style>
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="fonts/inter.css" />
-    <title>Odd1Out - The band that stands out.</title>
+    <link rel="canonical" href="https://odd1out.band" />
+    <title>Odd1Out</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://odd1out.band" />
+    <meta name="og:title" content="Odd1Out" />
+    <meta name="description" content="The band that stands out." />
+    <meta name="og:description" content="The band that stands out." />
+    <meta name="og:image" content="img/odd1out-og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Odd1out playing live at Emergenza festival"
+    />
   </head>
 
   <body>
@@ -23,13 +162,21 @@
       </nav> -->
     </header>
     <main class="main">
-      <section id="hero">
+      <section
+        id="hero"
+        role="img"
+        aria-label="Odd1out playing live at Emergenza festival"
+      >
         <h1>The band that stands out.</h1>
       </section>
       <section id="music">
         <h2 class="section-title">Music</h2>
         <div class="album">
-          <img class="album-cover" src="img/album-time-to-get-mad_512_l.jpg" />
+          <img
+            class="album-cover"
+            src="img/album-time-to-get-mad_512_l.jpg"
+            alt="Time to get mad album cover"
+          />
           <div class="album-text-container">
             <h3>Time To Get Mad EP</h3>
             <p class="album-blurb">Available now on all platforms</p>
@@ -37,23 +184,27 @@
               <a
                 href="https://open.spotify.com/album/1I6cCtMookz8PHjc2wgnEp"
                 rel="noreferrer"
-                ><img src="img/icon-spotify.svg"
+                ><img src="img/icon-spotify.svg" alt="spotify"
               /></a>
               <a
                 href="https://music.youtube.com/playlist?list=OLAK5uy_mPekn9GQIQamhmARhTewB2txragYK53jA"
                 rel="noreferrer"
-                ><img src="img/icon-google.svg"
+                ><img src="img/icon-google.svg" alt="google"
               /></a>
               <a
                 href="https://www.youtube.com/playlist?list=OLAK5uy_klcme_-2gX9DuTCqkxu90oY2fytubqnYI"
                 rel="noreferrer"
-                ><img src="img/icon-youtube.svg"
+                ><img src="img/icon-youtube.svg" alt="youtube"
               /></a>
             </nav>
           </div>
         </div>
         <div class="album">
-          <img class="album-cover" src="img/album-new-reason_512_l.jpg" />
+          <img
+            class="album-cover"
+            src="img/album-new-reason_512_l.jpg"
+            alt="New Reason album cover"
+          />
           <div class="album-text-container">
             <h3>New Reason (Demo)</h3>
             <p class="album-blurb">Available now on all platforms</p>
@@ -61,17 +212,17 @@
               <a
                 href="https://open.spotify.com/album/0ZyhtpvveCIZRmJrEhn7wg"
                 rel="noreferrer"
-                ><img src="img/icon-spotify.svg"
+                ><img src="img/icon-spotify.svg" alt="spotify"
               /></a>
               <a
                 href="https://music.youtube.com/playlist?list=OLAK5uy_nzDHjldr2mJ3dBIU97nXZWquWo48iCyqg"
                 rel="noreferrer"
-                ><img src="img/icon-google.svg"
+                ><img src="img/icon-google.svg" alt="google"
               /></a>
               <a
                 href="https://www.youtube.com/playlist?list=OLAK5uy_kwYDlf5GWP1I6xAtx39ZOj-3eWbWYRDdA"
                 rel="noreferrer"
-                ><img src="img/icon-youtube.svg"
+                ><img src="img/icon-youtube.svg" alt="youtube"
               /></a>
             </nav>
           </div>
@@ -79,7 +230,11 @@
       </section>
 
       <section id="video">
-        <img id="video-poster" src="img/video-time-to-get-mad_2048_l.jpg" />
+        <img
+          id="video-poster"
+          src="img/video-time-to-get-mad_2048_l.jpg"
+          alt="Black and white photo of Martin and Ric in Luxembourg in 2016 for the Time to get mad video. "
+        />
         <!-- <iframe
             width="1600"
             height="900"
@@ -134,12 +289,12 @@
       <footer id="footer">
         <nav class="contact">
           <ul>
-            <li><img src="img/icon-email.svg" />Contact</li>
+            <li><img src="img/icon-email.svg" alt="email" />Contact</li>
             <li>
               <a
                 href="https://www.instagram.com/odd1outtheband/"
                 rel="noreferrer"
-                ><img src="img/icon-instagram.svg" />Instagram</a
+                ><img src="img/icon-instagram.svg" alt="" />Instagram</a
               >
             </li>
           </ul>

@@ -1,104 +1,3 @@
-/* apply a natural box layout model to all elements, but allowing components to change */
-html {
-  box-sizing: border-box;
-  font-size: 16px;
-  padding: 0;
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-:root {
-  --max-width: 1600px;
-}
-
-iframe {
-  aspect-ratio: 16 / 9;
-  height: 100%;
-  width: 100%;
-}
-
-body {
-  font-family: Inter, sans-serif;
-  background-color: #000;
-  color: #fff;
-
-  max-width: var(--max-width);
-  margin: auto;
-  --h-padding: 1.5rem;
-
-  @media (width > 600px) {
-    --h-padding: min(10vw, 10rem);
-  }
-}
-
-.header {
-  position: absolute;
-  padding: 1.5rem var(--h-padding);
-
-  color: #fff;
-  display: flex;
-  align-items: center;
-}
-
-.title {
-  margin: 0;
-}
-
-.main-menu {
-  ul {
-    margin: 0;
-    display: flex;
-    gap: 69px;
-    list-style: none;
-    text-transform: uppercase;
-  }
-}
-
-.section-title {
-  font-weight: 500;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  margin: 0 auto 2.5rem;
-
-  @media (width > 600px) {
-    margin: 2rem auto;
-  }
-}
-
-#hero {
-  background-image:
-    linear-gradient(#6b1b1b 5%, #ffffff00), url(../img/hero_2048_l.jpg);
-  background-position: center;
-  background-size: auto 488px;
-  background-blend-mode: multiply;
-  min-height: 488px;
-  container-type: inline-size;
-  padding: 10% var(--h-padding);
-  display: flex;
-  align-items: flex-end;
-
-  @media (width > 600px) {
-    background-position: top;
-    background-size: cover;
-    aspect-ratio: 1512 / 772;
-    align-items: flex-start;
-  }
-
-  h1 {
-    font-size: 15cqw;
-    line-height: 1;
-    text-transform: uppercase;
-    margin: 0;
-
-    @media (width > 600px) {
-      font-size: 10.6cqw;
-    }
-  }
-}
-
 #music {
   background-color: #f5ede3;
   color: #000;
@@ -109,13 +8,22 @@ body {
   margin-bottom: 3rem;
 
   @media (width > 1000px) {
-    display: flex;
-    align-items: center;
-    gap: var(--h-padding);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    /* gap: var(--h-padding); */
   }
+}
+
+.album-text-container {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 512px;
 
   h3 {
-    font-size: 3rem;
+    font-size: min(3rem, 10cqw);
     font-weight: 700;
     line-height: 1;
     margin: 0;
@@ -129,10 +37,11 @@ body {
 
 .album-cover {
   max-width: 100%;
-  width: 464px;
+  aspect-ratio: 1/1;
 }
 
 .album-blurb {
+  font-size: min(1rem, 5cqw);
   margin-top: 0.2rem;
   line-height: 1;
 }
@@ -140,12 +49,22 @@ body {
 .album-links {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  max-width: 50%;
   gap: 1.5rem;
+
+  a {
+    flex: 0 1 auto;
+
+    img {
+      max-width: 100%;
+    }
+  }
 }
 
 #video {
   aspect-ratio: 1/1;
-  overflow-y: hidden;
+  overflow: hidden;
 
   @media (width > 600px) {
     aspect-ratio: 2048/1144;
@@ -164,6 +83,7 @@ body {
 .member-grid {
   display: grid;
   gap: 1rem;
+  container-type: inline-size;
 
   @media (width > 600px) {
     aspect-ratio: 5/8;
@@ -195,12 +115,22 @@ body {
 .role {
   background-color: #000;
   padding: 0.625rem;
+
   font-size: 2rem;
   width: fit-content;
+
+  @media (width > 600px) {
+    padding: 0.9375cqw;
+    font-size: 3cqw;
+  }
 }
 
 .role {
   font-size: 1.5rem;
+
+  @media (width > 600px) {
+    font-size: 2cqw;
+  }
 }
 
 .anders {
@@ -254,7 +184,7 @@ body {
   margin: 1rem 0 0;
 
   @media (width > 600px) {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
 
