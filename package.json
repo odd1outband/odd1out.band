@@ -12,7 +12,9 @@
     "build:fonts": "cp -r src/fonts/ dist/fonts",
     "build:img": "cp -r src/img/ dist/img",
     "build": "npm run clean && mkdir dist && npm run build:html && npm run build:css && npm run build:img && npm run build:fonts",
-    "docker": "docker compose up -d --build"
+    "docker": "docker compose up -d --build",
+    "deploy": "git push hetzner main:stage",
+    "promote": "git fetch hetzner stage && git push hetzner hetzner/stage:refs/heads/prod"
   },
   "repository": {
     "type": "git",
